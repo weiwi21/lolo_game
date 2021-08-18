@@ -7,7 +7,6 @@ class GameBoard:
         self.file_location = "puzzles/" + location
         # set some defaults
         self.display = display
-        self.win = False
         # calls the init
         self.__init_()
 
