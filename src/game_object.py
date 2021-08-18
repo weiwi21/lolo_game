@@ -197,7 +197,6 @@ class Tree(GameObject):
 class Treasure(GameObject):
     def __init__(self):
         super().__init__(5, "TREASURE", False, False, True)
-        self.available = False
         self.IMAGES = []
         image = pygame.transform.scale(pygame.image.load("images/treasure.gif"), (DIMENSION, DIMENSION))
         self.IMAGES.append(image)
@@ -206,6 +205,5 @@ class Treasure(GameObject):
         self.current_image = self.IMAGES[0]
 
     def complete(self):
-        self.available = True
         self.type = "OPEN_TREASURE"
         self.current_image = self.IMAGES[1]
