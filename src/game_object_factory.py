@@ -4,7 +4,7 @@ from game_object import *
 # factory class for game cell initiation
 class GameObjectFactory:
     def __init__(self):
-        self.idList = {
+        self.id_list = {
             '1': self.lolo,
             '2': self.box,
             '3': self.snake,
@@ -21,7 +21,7 @@ class GameObjectFactory:
     def get(self, id):
         if not id or id == '0':
             return None
-        return self.idList[id]()
+        return self.id_list[id]()
 
     def lolo(self):
         return Lolo()
