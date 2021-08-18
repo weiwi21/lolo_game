@@ -1,13 +1,14 @@
 from game_object_factory import *
 
+gameObjectFactory = GameObjectFactory()
+
 
 class GameCell():
     # set values
     def __init__(self, locationX, locationY, id):
         self.locationX = locationX
         self.locationY = locationY
-        gameObjectFactory = GameObjectFactory(id)
-        self.occupied = gameObjectFactory.get()
+        self.occupied = gameObjectFactory.get(id)
         self.old = None
 
     # replaces old piece with new piece, old piece goes to self.old or goes to None

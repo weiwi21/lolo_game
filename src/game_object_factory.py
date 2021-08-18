@@ -1,26 +1,27 @@
 from game_object import *
 
 
-# factory class for game board initiation
+# factory class for game cell initiation
 class GameObjectFactory:
-    def __init__(self, id):
+    def __init__(self):
         self.idList = {
-            '1': self.lolo(),
-            '2': self.box(),
-            '3': self.snake(),
-            '4': self.heart(),
-            '5': self.treasure(),
-            '6': self.bridge(),
-            '7': self.medusa(),
-            '8': self.rock(),
-            '9': self.tree(),
-            '10': self.power_heart(),
-            '11': self.river()
+            '1': self.lolo,
+            '2': self.box,
+            '3': self.snake,
+            '4': self.heart,
+            '5': self.treasure,
+            '6': self.bridge,
+            '7': self.medusa,
+            '8': self.rock,
+            '9': self.tree,
+            '10': self.power_heart,
+            '11': self.river
         }
-        self.id = id
 
-    def get(self):
-        return self.idList.get(self.id, None)
+    def get(self, id):
+        if not id or id == '0':
+            return None
+        return self.idList[id]()
 
     def lolo(self):
         return Lolo()

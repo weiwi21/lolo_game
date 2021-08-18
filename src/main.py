@@ -1,9 +1,18 @@
+import os.path
+import sys
+
 from event_handler import *
 from display import *
 from game_board import *
 
 
 def main():
+    args = sys.argv[1:]
+
+    location = args[0] if len(args) > 0 else "setting3.pzl"
+    if not os.path.isfile(location):
+        print("\nThe file " + location + " does not exist.")
+        sys.exit(1)
 
     # Initiate the pygame
     pygame.init()
@@ -11,7 +20,7 @@ def main():
     # Set's some default values
     pygame.display.set_caption('Lolo Game')
     display = Display()
-    game_board = GameBoard("setting3.pzl", display)
+    game_board = GameBoard(location, display)
 
     # Check if the puzzle input is the correct settings
     if game_board.can_play:
