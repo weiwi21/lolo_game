@@ -21,8 +21,8 @@ class GameBoard:
         arr = []
         file = open(self.file_location, "r")
         # read lines and manipulate information
-        lines = file.readlines()
-        scale = lines[0][:-1].split(' ')
+        lines = file.read().splitlines()
+        scale = lines[0].split(' ')
         self.scale = (int(scale[0]), int(scale[1]))
         self.display.set_screen(scale)
         lines.pop(0)
@@ -30,8 +30,7 @@ class GameBoard:
         # read in id from file, based off id create cell and fill into game board array
         y = 0
         for line in lines:
-            new_line = line[:-1]
-            cells = new_line.split(' ')
+            cells = line.split(' ')
             temp = []
             x = 0
             for cell_id in cells:
@@ -94,6 +93,7 @@ class GameBoard:
 
                         if cell_type == "OPEN_TREASURE":
                             self.win = True
+                            self.win_game()
 
                         # move lolo location and update location in the list variable
                         current.occupied.update(direction)
