@@ -1,3 +1,4 @@
+
 import pygame.transform
 
 DIMENSION = 60
@@ -155,7 +156,6 @@ class Snake(GameObject):
         self.IMAGES.append(egg)
         self.current_image = self.IMAGES[0]
         self.is_egg = False
-        self.number = 0
 
     # changes image for snake
     def shot(self):
