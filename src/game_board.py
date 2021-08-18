@@ -94,7 +94,6 @@ class GameBoard:
 
                         if cell_type == "OPEN_TREASURE":
                             self.win = True
-                            self.win_game()
 
                         # move lolo location and update location in the list variable
                         current.occupied.update(direction)

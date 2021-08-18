@@ -9,8 +9,8 @@ from game_board import *
 def main():
     args = sys.argv[1:]
 
-    location = args[0] if len(args) > 0 else "setting3.pzl"
-    if not os.path.isfile(location):
+    location = args[0] if len(args) > 0 else "puzzles/setting3.pzl"
+    if not os.path.isfile("puzzles/" + location):
         print("\nThe file " + location + " does not exist.")
         sys.exit(1)
 
