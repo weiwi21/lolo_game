@@ -77,15 +77,18 @@ class GameBoard:
             current = self.board[y][x]
 
             # Checks if the move is valid
+            print(self.check(current, move_to, x_direction, y_direction))
             if self.check(current, move_to, x_direction, y_direction):
                 if move_to.occupied is not None:
 
                     # Update some values and run some checks
                     cell_type = move_to.get_name()
-                    if "HEART" in cell_type or "TREASURE" in cell_type:
+                    if "HEART" in cell_type or "TREASURE" in cell_type or cell_type == "BRIDGE":
+                        if "HEART" in cell_type:
+                            self.heart -= 1
+
                         if cell_type == "SUPER_HEART":
                             current.occupied.power_count += move_to.occupied.power_count
-                        self.heart -= 1
 
                         if self.heart == 0:
                             self.board[self.treasure[1]][self.treasure[0]].occupied.complete()
