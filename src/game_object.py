@@ -155,17 +155,14 @@ class Snake(GameObject):
         egg = pygame.transform.scale(pygame.image.load("images/egg.gif"), (DIMENSION, DIMENSION))
         self.IMAGES.append(egg)
         self.current_image = self.IMAGES[0]
-        self.is_egg = False
 
     # changes image for snake
     def shot(self):
-        self.is_egg = True
         self.type = "EGG"
         self.movable = True
         self.current_image = self.IMAGES[2]
 
     def back(self):
-        self.is_egg = False
         self.type = "SNAKE"
         self.movable = False
         self.current_image = self.IMAGES[0]
