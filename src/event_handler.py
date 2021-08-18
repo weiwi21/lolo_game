@@ -3,12 +3,11 @@ import threading
 
 
 class EventHandler():
-    def __init__(self, display, clock, gameboard):
+    def __init__(self, display, game_board):
         # Set some defaults
         self.lock = threading.Lock()
-        self.clock = clock
         self.display = display
-        self.gameboard = gameboard
+        self.game_board = game_board
         self.game_over = False
         self.snakes = []
         self.dead = False
@@ -24,20 +23,20 @@ class EventHandler():
             if not self.game_over:
                 # Takes the movement keys, tells the game board to move the game pieces and checks for win or death
                 if event.key == pygame.K_LEFT or event.key == pygame.K_a:
-                    self.gameboard.lolo_move(-1, 0, "LEFT")
+                    self.game_board.lolo_move(-1, 0, "LEFT")
                     self.check()
                 elif event.key == pygame.K_RIGHT or event.key == pygame.K_d:
-                    self.gameboard.lolo_move(1, 0, "RIGHT")
+                    self.game_board.lolo_move(1, 0, "RIGHT")
                     self.check()
                 elif event.key == pygame.K_UP or event.key == pygame.K_w:
-                    self.gameboard.lolo_move(0, -1, "UP")
+                    self.game_board.lolo_move(0, -1, "UP")
                     self.check()
                 elif event.key == pygame.K_DOWN or event.key == pygame.K_s:
-                    self.gameboard.lolo_move(0, 1, "DOWN")
+                    self.game_board.lolo_move(0, 1, "DOWN")
                     self.check()
                 elif event.key == pygame.K_SPACE:
                     # Checks if the shot lands and starts timer if shot lands
-                    shot = self.gameboard.shoot()
+                    shot = self.game_board.shoot()
                     if shot is not None:
                         self.snakes.append(shot.occupied)
                         t = threading.Timer(5, self.convert_snake)
@@ -53,30 +52,30 @@ class EventHandler():
 
             # If the user hits the r key the game resets
             elif event.key == pygame.K_r:
-                self.gameboard.reset()
+                self.game_board.reset()
                 self.game_over = False
-                self.display.set_board(self.gameboard.board)
+                self.display.set_board(self.game_board.board)
                 self.display.draw_board()
 
         return True
 
     # Runs all the checks after the move
     def check(self):
-        if self.gameboard.check_medusa():
+        if self.game_board.check_medusa():
             self.die()
             self.dead = True
-        if self.gameboard.win and not self.dead:
+        if self.game_board.win and not self.dead:
             self.win_game()
 
     # tells the game board to end the game, displays the text, and locks the movement and shooting keys
     def die(self):
-        self.gameboard.end_game()
+        self.game_board.end_game()
         self.display.draw_text('Game Over')
         self.game_over = True
 
     # Tells the game board to end/win the game, displays the text, locks the movement and shooting keys
     def win_game(self):
-        self.gameboard.win_game()
+        self.game_board.win_game()
         self.display.draw_text('You Win!')
         self.game_over = True
 
@@ -84,7 +83,7 @@ class EventHandler():
     def convert_snake(self):
         self.lock.acquire()
 
-        self.gameboard.snake_return(self.snakes[0])
+        self.game_board.snake_return(self.snakes[0])
         self.snakes.pop(0)
 
         self.lock.release()
