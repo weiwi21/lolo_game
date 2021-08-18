@@ -10,6 +10,24 @@ Reset: R\
 Close Window: Esc or close the window\
 \
 \
-###Class Diagram
+##Class Diagram
 ![Lolo-Class Diagram](https://user-images.githubusercontent.com/45579564/129933099-9b41be1c-4c5c-4705-98dd-900eebc23d5a.png)
-
+\
+\
+##Sequence Diagram
+![Lolo-Sequence Diagram](https://user-images.githubusercontent.com/45579564/129935752-149fdac1-4839-4fb3-8e04-475d68743cc0.png)
+\
+\
+##Game Object ID
+0: Empty
+1: Lolo
+2: Box
+3: Snake
+4: Heart
+5: Treasure
+6: Bridge
+7: Medusa
+8: Rock
+9: Tree
+10: Power Heart
+11: Water/River
