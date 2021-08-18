@@ -7,7 +7,7 @@ Controls:\
 Movement: WASD / arrow keys\
 Shoot: Spacebar\
 Reset: R\
-Close Window: Esc or close the window\
+Close Window: Esc or close the window
 
  
 ## Class Diagram
@@ -19,15 +19,15 @@ Close Window: Esc or close the window\
  
  
 ## Game Object ID
-0: Empty
-1: Lolo
-2: Box
-3: Snake
-4: Heart
-5: Treasure
-6: Bridge
-7: Medusa
-8: Rock
-9: Tree
-10: Power Heart
+0: Empty\
+1: Lolo\
+2: Box\
+3: Snake\
+4: Heart\
+5: Treasure\
+6: Bridge\
+7: Medusa\
+8: Rock\
+9: Tree\
+10: Power Heart\
 11: Water/River
