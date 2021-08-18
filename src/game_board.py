@@ -77,7 +77,6 @@ class GameBoard:
             current = self.board[y][x]
 
             # Checks if the move is valid
-            print(self.check(current, move_to, x_direction, y_direction))
             if self.check(current, move_to, x_direction, y_direction):
                 if move_to.occupied is not None:
 
