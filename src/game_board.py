@@ -7,6 +7,7 @@ class GameBoard:
         self.file_location = "puzzles/" + location
         # set some defaults
         self.display = display
+        self.win = False
         # calls the init
         self.__init_()
 
@@ -80,7 +81,7 @@ class GameBoard:
                 if move_to.occupied is not None:
 
                     # Update some values and run some checks
-                    cell_type = move_to.occupied.name()
+                    cell_type = move_to.get_name()
                     if "HEART" in cell_type or "TREASURE" in cell_type:
                         if cell_type == "SUPER_HEART":
                             current.occupied.power_count += move_to.occupied.power_count
