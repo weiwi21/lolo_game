@@ -10,7 +10,8 @@ Reset: R\
 Close Window: Esc or close the window
 
 ## Demo
-[![Demo](https://user-images.githubusercontent.com/45579564/130131481-5f7fc92d-01c2-4250-b4a7-ff51b33ad521.png =250x250)](https://www.youtube.com/watch?v=cMGwNbzgiJ4)
+Demo Image Link
+[![Demo](https://user-images.githubusercontent.com/45579564/130131481-5f7fc92d-01c2-4250-b4a7-ff51b33ad521.png)](https://www.youtube.com/watch?v=cMGwNbzgiJ4)
 
 ## Class Diagram
 ![Lolo-Class Diagram](https://user-images.githubusercontent.com/45579564/129933099-9b41be1c-4c5c-4705-98dd-900eebc23d5a.png)
