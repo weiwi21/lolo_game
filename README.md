@@ -9,6 +9,8 @@ Shoot: Spacebar\
 Reset: R\
 Close Window: Esc or close the window
 
+## Demo
+https://youtu.be/cMGwNbzgiJ4
  
 ## Class Diagram
 ![Lolo-Class Diagram](https://user-images.githubusercontent.com/45579564/129933099-9b41be1c-4c5c-4705-98dd-900eebc23d5a.png)
